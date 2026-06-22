@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   description: "Más que un corte, una experiencia. Tratamientos capilares, colorimetría y barbería en Malagüeño.",
   manifest: "/manifest.json",
   icons: {
+    icon: "/favicon.png",
     apple: "/icons/favicon-192.png",
   },
 };
