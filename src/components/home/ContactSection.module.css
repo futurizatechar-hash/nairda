@@ -1,0 +1,117 @@
+.section {
+  padding: 8rem 2rem;
+  background-color: #050505;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  margin: 0 auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.infoCard {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(145deg, rgba(212, 175, 55, 0.03) 0%, rgba(15, 15, 15, 0.8) 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.05);
+  border-top: 3px solid var(--accent-gold);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.visible .infoCard {
+  animation: fadeUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.infoCard:hover {
+  background: linear-gradient(145deg, rgba(212, 175, 55, 0.08) 0%, rgba(15, 15, 15, 0.9) 100%);
+  border-color: rgba(212, 175, 55, 0.2);
+  border-top-width: 5px;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(212, 175, 55, 0.05);
+}
+
+.cardTitle {
+  background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+.infoCard p {
+  color: #d0d0d0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--accent-gold) !important;
+  font-size: 1.25rem !important;
+  margin-top: 0.5rem !important;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.closed {
+  color: #888 !important;
+  margin-top: 1rem !important;
+  font-style: italic;
+  font-size: 0.95rem !important;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .header {
+    margin-bottom: 3rem;
+  }
+  
+  .infoCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}

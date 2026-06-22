@@ -1,0 +1,175 @@
+.stepTitle {
+  color: var(--accent-gold);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.label {
+  display: block;
+  color: #d0d0d0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.optionBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--foreground);
+  padding: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.optionBtn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.selected {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.lengthSection {
+  margin-top: 1rem;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--foreground);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  color-scheme: dark;
+  margin-bottom: 2rem;
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+}
+
+.timeSection {
+  margin-top: 1rem;
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.timeBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--foreground);
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeBtn:hover {
+  border-color: var(--accent-gold);
+}
+
+.selectedTime {
+  background: var(--accent-gold);
+  color: var(--background);
+  border-color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.nextBtn, .backBtn, .whatsappBtn {
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.nextBtn {
+  background: var(--accent-gold);
+  color: var(--background);
+  flex: 1;
+}
+
+.nextBtn:disabled {
+  background: rgba(212, 175, 55, 0.3);
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.backBtn {
+  background: transparent;
+  color: #a0a0a0;
+  border: 1px solid #333;
+}
+
+.whatsappBtn {
+  background: #25D366;
+  color: white;
+  flex: 1;
+}
+
+.whatsappBtn:hover {
+  background: #128C7E;
+}
+
+.summaryCard {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.summaryCard p {
+  margin-bottom: 0.8rem;
+  color: #d0d0d0;
+}
+
+.summaryCard strong {
+  color: var(--accent-gold);
+  margin-right: 0.5rem;
+}
+
+.instruction {
+  color: #a0a0a0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.successMessage {
+  text-align: center;
+}
+
+.successMessage p {
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+}
