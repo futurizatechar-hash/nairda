@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 
 // Force Cloudflare to treat this route as dynamic to prevent 405 errors on Server Actions
 export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 export default function LoginLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
