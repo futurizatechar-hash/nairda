@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { Metadata } from 'next';
 import AdminLayoutClient from '@/components/admin/AdminLayoutClient';
 
