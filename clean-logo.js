@@ -8,14 +8,20 @@ async function processLogo(size, outputPath) {
       .raw()
       .toBuffer({ resolveWithObject: true });
     
-    for (let i = 0; i < data.length; i += info.channels) {
-      const r = data[i];
-      const g = data[i + 1];
-      const b = data[i + 2];
-      
-      // Make white and light gray pixels completely transparent
-      if (r > 230 && g > 230 && b > 230) {
-        data[i + 3] = 0; // Set alpha to 0
+    const cx = info.width / 2;
+    const cy = info.height / 2;
+    // Shrink radius by 1% to ensure no white anti-aliased border is left from the original square
+    const radiusSq = Math.pow((info.width / 2) * 0.98, 2); 
+    
+    for (let y = 0; y < info.height; y++) {
+      for (let x = 0; x < info.width; x++) {
+        const i = (y * info.width + x) * info.channels;
+        const distSq = Math.pow(x - cx, 2) + Math.pow(y - cy, 2);
+        
+        // If the pixel is outside the strict circle, make it transparent
+        if (distSq > radiusSq) {
+          data[i + 3] = 0; // Alpha = 0
+        }
       }
     }
 
@@ -39,8 +45,8 @@ async function processLogo(size, outputPath) {
 }
 
 async function run() {
-  console.log('Processing logos with sharp pixel manipulation...');
-  await processLogo(null, 'public/logo.png'); // Override itself with transparent version
+  console.log('Processing logos with perfect geometric circular crop...');
+  await processLogo(null, 'public/logo.png');
   await processLogo(192, 'public/icons/favicon-192.png');
   await processLogo(512, 'public/icons/favicon-512.png');
   await processLogo(64, 'public/favicon.png');
