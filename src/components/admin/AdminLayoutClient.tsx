@@ -33,8 +33,6 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
 
   const handleLogout = async () => {
     await logoutAdmin();
-    // Force a full page reload to clear browser cache and re-evaluate middleware auth status
-    window.location.href = '/admin/login'; 
   };
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);

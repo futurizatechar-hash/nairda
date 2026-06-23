@@ -1,6 +1,7 @@
 'use server';
 
 import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 export async function loginAdmin(formData: FormData) {
   const user = formData.get('user') as string;
@@ -25,4 +26,5 @@ export async function loginAdmin(formData: FormData) {
 export async function logoutAdmin() {
   const cookieStore = await cookies();
   cookieStore.delete('admin_session');
+  redirect('/admin/login');
 }

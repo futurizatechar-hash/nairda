@@ -3,6 +3,7 @@
   "short_name": "Nairda Admin",
   "description": "Panel de Administración de Nairda Studio",
   "start_url": "/admin/agenda",
+  "scope": "/admin/",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#D4AF37",
